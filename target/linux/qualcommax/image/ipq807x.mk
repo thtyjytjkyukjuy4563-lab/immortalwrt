@@ -676,3 +676,27 @@ define Device/verizon_cr1000a
 	DEVICE_PACKAGES := ipq-wifi-verizon_cr1000a ath11k-firmware-qcn9074-ddwrt kmod-phy-realtek
 endef
 TARGET_DEVICES += verizon_cr1000a
+
+define Device/inseego_fg2000
+  $(call Device/FitImage)
+  $(call Device/EmmcImage)
+  DEVICE_VENDOR := Inseego
+  DEVICE_MODEL := FG2000
+  SOC := ipq8072
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  KERNEL_SIZE := 61440k
+  IMAGE_SIZE := 3932160k
+  # 基于 ipq8074-hk-cpu.dtsi，通常使用 config@hk09
+  DEVICE_DTS_CONFIG := config@hk09
+  DEVICE_DTS := ipq8072-fg2000
+  DEVICE_PACKAGES := \
+    ipq-wifi-inseego_fg2000 \
+    kmod-usb3 kmod-usb-dwc3-qcom \
+    kmod-ath11k-pci ath11k-firmware-qca5024 \
+    kmod-aqr-phy \
+    kmod-mhi-wwan-ctrl kmod-mhi-wwan-mbim kmod-usb-serial-option
+  IMAGES += factory.ubi
+  IMAGE/factory.ubi := append-ubi | qsdk-ipq-factory-nand
+endef
+TARGET_DEVICES += inseego_fg2000
