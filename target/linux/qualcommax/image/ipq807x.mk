@@ -693,8 +693,7 @@ define Device/inseego_fg2000
   DEVICE_PACKAGES := \
     ipq-wifi-inseego_fg2000 \
     kmod-usb3 kmod-usb-dwc3-qcom \
-    kmod-ath11k-pci ath11k-firmware-qca5024 \
-    kmod-aqr-phy \
+    kmod-ath11k-pci ath11k-firmware \
     kmod-mhi-wwan-ctrl kmod-mhi-wwan-mbim kmod-usb-serial-option
   IMAGES += factory.ubi
   IMAGE/factory.ubi := append-ubi | qsdk-ipq-factory-nand
