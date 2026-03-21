@@ -694,7 +694,7 @@ define Device/inseego_fg2000
     kmod-hwmon-gpiofan \
     kmod-usb3 kmod-usb-dwc3-qcom \
     kmod-ath11k-pci \
-    kmod-mhi-wwan-ctrl kmod-mhi-wwan-mbim kmod-usb-serial-option \
+    ath11k-firmware-ipq8074-ddwrt \
     ipq-wifi-inseego_fg2000
   
   IMAGES += factory.bin
